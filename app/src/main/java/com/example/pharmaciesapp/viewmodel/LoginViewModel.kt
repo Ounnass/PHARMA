@@ -14,7 +14,7 @@ class LoginViewModel(private val sessionManager: SessionManager) : ViewModel() {
     var isLoggedIn by mutableStateOf(sessionManager.isLoggedIn())
 
     fun onLoginClick(onSuccess: () -> Unit) {
-        if (email == "admin@gmail.com" && password == "1234") {
+        if (email == "admin@gmail.com" && password == "12345") {
             sessionManager.saveAuthToken("fake-jwt-token")
             isLoggedIn = true
             onSuccess()

@@ -19,6 +19,7 @@ import com.example.pharmaciesapp.ui.addedit.AddEditPharmacyScreen
 import com.example.pharmaciesapp.ui.detail.DetailScreen
 import com.example.pharmaciesapp.ui.home.HomeScreen
 import com.example.pharmaciesapp.ui.login.LoginScreen
+import com.example.pharmaciesapp.ui.theme.PharmaciesTheme
 import com.example.pharmaciesapp.viewmodel.AddEditViewModel
 import com.example.pharmaciesapp.viewmodel.DetailViewModel
 import com.example.pharmaciesapp.viewmodel.HomeViewModel
@@ -47,7 +48,9 @@ class MainActivity : ComponentActivity() {
         val repository = PharmacyRepository(api, db.pharmacyDao)
 
         setContent {
-            PharmacyApp(sessionManager, repository)
+            PharmaciesTheme {
+                PharmacyApp(sessionManager, repository)
+            }
         }
     }
 }
